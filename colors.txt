@@ -1,0 +1,16 @@
+00ff00ff
+A9ed96f0
+A9ed96f0
+f0f
+ff0000
+255, 255, 255, 255
+0,0,0
+255, 255
+00ff00f
+25
+
+
+pipenv run python -m isort --profile black --force-single-line-imports --line-length 120 tests.py
+pipenv run python -m autoflake --recursive --remove-all-unused-imports --remove-unused-variables --in-place tests.py
+pipenv run python -m black --line-length 120 tests.py
+pipenv run python -m flake8 --ignore=E501,W503,E711 tests.py
